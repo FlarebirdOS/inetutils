@@ -1,6 +1,6 @@
 pkgname=inetutils
 pkgver=2.6
-pkgrel=1
+pkgrel=2
 pkgdesc="A collection of common network programs"
 arch=('x86_64')
 url="https://www.gnu.org/software/inetutils/"
@@ -8,10 +8,16 @@ license=('GPL-3.0-or-later')
 groups=('base')
 depends=(
     'glibc'
+    'libcap'
+    'libxcrypt'
     'readline'
     'ncurses'
 )
-options=('!emptydirs' '!lto')
+makedepends=(
+    'help2man'
+    'python'
+)
+options=('!emptydirs')
 source=(https://ftp.gnu.org/gnu/${pkgname}/${pkgname}-${pkgver}.tar.xz)
 sha256sums=(68bedbfeaf73f7d86be2a7d99bcfbd4093d829f52770893919ae174c0b2357ca)
 
