@@ -1,6 +1,6 @@
 pkgname=inetutils
 pkgver=2.6
-pkgrel=2
+pkgrel=3
 pkgdesc="A collection of common network programs"
 arch=('x86_64')
 url="https://www.gnu.org/software/inetutils/"
@@ -40,6 +40,8 @@ build() {
         --disable-rlogin
         --disable-rsh
         --disable-servers
+        --disable-ping
+        --disable-ping6
         ${configure_options}
     )
 
